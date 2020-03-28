@@ -3,5 +3,5 @@ menu=`compgen -c | dmenu "$@" -p "$USER@$HOSTNAME:$PWD"`
 case $menu in
         *\;) st -- sh -c "$menu";;
         *\!) echo "$menu" | cut -d'!' -f1 | ${SHELL:-"/bin/sh"} &;;
-	*) $menu 2>&1 | dmenu "$@" -p "$USER@$HOSTNAME:$PWD" -l 50;;
+	*) [ $menu != "" ]  && $menu 2>&1 | dmenu "$@" -p "$USER@$HOSTNAME:$PWD" -l 50;;
 esac
