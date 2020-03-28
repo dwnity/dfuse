@@ -1,11 +1,11 @@
-dmenu - dynamic menu
+dfuse - dynamic menu and terminal interface 
 ====================
-dmenu is an efficient dynamic menu for X.
+dfuse is an efficient dynamic menu for X i based on dmenu that can also function as an commandline interface.
 
 
 Requirements
 ------------
-In order to build dmenu you need the Xlib header files.
+Just like dmenu, In order to build dfuse you need the Xlib header files.
 
 
 Installation
@@ -19,6 +19,11 @@ Afterwards enter the following command to build and install dmenu
     make clean install
 
 
-Running dmenu
+Running dfuse
 -------------
 See the man page for details.
+additions made to this are:
+- teminal applications can be launched by appending a ;
+	- this is also usefull for sudo commands that you need an output for
+- normal dmenu like application launches has to be appended with a !
+- anything not appended with a ; or a ! will send it's stdout and stderr to another dmenu for easy viewing, usefull for journalctli, service openvpn status, cat, ls and friends
