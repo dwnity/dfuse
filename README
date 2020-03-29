@@ -1,4 +1,4 @@
-dfuse - dynamic menu and terminal interface 
+dfuse - dynamic menu and commandline interface
 ====================
 dfuse is an efficient dynamic menu for X i based on dmenu that can also function as an commandline interface.
 
