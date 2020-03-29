@@ -30,7 +30,7 @@ additions made to this are:
 
 Current limitations
 -------------------
-- cd does not work
+- cd only work in combination with vim or other commandline tools
 - only single line commands work
 - no file name completion
 - limited commandline completion
