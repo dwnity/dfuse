@@ -1,0 +1,1 @@
+dterm ssh `grep "Host " .ssh/config|sed 's/Host //'|dmenu`
