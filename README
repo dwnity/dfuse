@@ -23,10 +23,9 @@ Running dfuse
 -------------
 See the man page for details.
 additions made to this are:
-- teminal applications can be launched by appending a ;
-	- this is also usefull for sudo commands that you need an output for
-- normal dmenu like application launches has to be appended with a !
-- anything not appended with a ; or a ! will send it's stdout and stderr to another dmenu for easy viewing, usefull for journalctli, service openvpn status, cat, ls and friends
+- run teminal applications by prepending them with dterm
+	- for [sudo] commands that you don't need an output also append them with a ;
+- anything not appended with a ; will send it's stdout and stderr to another dmenu for easy viewing, usefull for journalctli, service openvpn status, cat, ls, man and friends
 
 Current limitations
 -------------------
