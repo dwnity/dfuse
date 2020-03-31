@@ -1,5 +1,5 @@
 #!/bin/bash
-menu=`compgen -c | dmenu "$@" -p "$USER@$HOSTNAME:$PWD"`
+menu=`compgen -c | sort -u | dmenu "$@" -p "$USER@$HOSTNAME:$PWD"`
 case $menu in
         *\;) st -- sh -c "$menu";;
         *\!) echo "$menu" | cut -d'!' -f1 | ${SHELL:-"/bin/sh"} &;;
