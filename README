@@ -23,9 +23,8 @@ Running dfuse
 -------------
 See the man page for details.
 additions made to this are:
-- run teminal applications by prepending them with dterm
-	- for [sudo] commands that you don't need an output also append them with a ;
-- anything not appended with a ; will send it's stdout and stderr to another dmenu for easy viewing, usefull for journalctli, service openvpn status, cat, ls, man and friends
+- run teminal applications and commands that have uninteresting outputs by prepending them with dterm
+- by prepending commands with dout you can send it's stdout and stderr to another dmenu for easy viewing, usefull for journalctli, service openvpn status, cat, ls, man and friends
 
 Current limitations
 -------------------
