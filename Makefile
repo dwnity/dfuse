@@ -34,7 +34,7 @@ clean:
 dist: clean
 	mkdir -p dmenu-$(VERSION)
 	cp LICENSE Makefile README arg.h config.def.h config.mk dmenu.1\
-		drw.h util.h dmenu_path dmenu_run dterm dssh stest.1 $(SRC)\
+		drw.h util.h dmenu_path dmenu_run dout dterm dssh stest.1 $(SRC)\
 		dmenu-$(VERSION)
 	tar -cf dmenu-$(VERSION).tar dmenu-$(VERSION)
 	gzip dmenu-$(VERSION).tar
@@ -42,11 +42,12 @@ dist: clean
 
 install: all
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f dmenu dmenu_path dmenu_run dterm dssh stest $(DESTDIR)$(PREFIX)/bin
+	cp -f dmenu dmenu_path dmenu_run dout dterm dssh stest $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_path
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_run
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dterm
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/dout
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dssh
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/stest
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
@@ -60,6 +61,7 @@ uninstall:
 		$(DESTDIR)$(PREFIX)/bin/dmenu_path\
 		$(DESTDIR)$(PREFIX)/bin/dmenu_run\
 		$(DESTDIR)$(PREFIX)/bin/dterm\
+		$(DESTDIR)$(PREFIX)/bin/dout\
 		$(DESTDIR)$(PREFIX)/bin/dssh\
 		$(DESTDIR)$(PREFIX)/bin/stest\
 		$(DESTDIR)$(MANPREFIX)/man1/dmenu.1\
