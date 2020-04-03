@@ -1,2 +1,2 @@
 #!/bin/bash
-command="$@";st -- $command
+command="$@";st -- bash -c $command
