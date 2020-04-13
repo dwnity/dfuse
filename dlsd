@@ -1,0 +1,7 @@
+#!/bin/bash
+file=`dout ls -d .*/ */`
+while [ -d $file ]; do
+        cd $file
+        file=`dout ls -d .*/ */`
+done
+$file | ${SHELL:-"/bin/sh"} &
