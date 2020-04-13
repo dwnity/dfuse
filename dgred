@@ -1,0 +1,5 @@
+#!/bin/sh
+Name=$1
+file=$2;
+[ -f $file ] && grep "$Name" $file|sed "s/$Name//"|dmenu ||
+	grep "^$Name" -hr $file|sed "s/$Name//"|dmenu
