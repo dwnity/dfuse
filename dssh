@@ -1,1 +1,2 @@
-dterm ssh `grep "Host " .ssh/config|sed 's/Host //'|dmenu`
+#!/bin/sh
+dterm ssh `dgred "Host " .ssh/config`
