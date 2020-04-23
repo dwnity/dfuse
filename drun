@@ -1,0 +1,2 @@
+#!/bin/bash
+dmenu_path | dmenu "$@" -p "$USER@$HOSTNAME:$PWD" | ${SHELL:-"/bin/sh"} &
