@@ -1,2 +1,2 @@
 #!/bin/bash
-menu="$@"; $menu 2>&1 | dmenu -p "$USER@$HOSTNAME:$PWD" -l 50
+menu="$@"; $menu 2>&1 | dmenu  -i -p "$USER@$HOSTNAME:$PWD" -l 25

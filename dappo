@@ -46,7 +46,7 @@ sub slurp {
 }
 
 my @entry_types;
-my $dmenu_cmd = 'dmenu -i';
+my $dmenu_cmd = 'dmenu -i -l 25';
 my $result = GetOptions(
     'dmenu=s' => \$dmenu_cmd,
     'entry-type=s' => \@entry_types,
