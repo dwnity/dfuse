@@ -1,0 +1,2 @@
+#!/bin/bash
+dterm sudo dout $@
