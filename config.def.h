@@ -15,6 +15,14 @@ static const char *colors[SchemeLast][2] = {
 	[SchemeNormHighlight] = { "#ffc978", "#222222" },
 	[SchemeOut] = { "#000000", "#00ffff" },
 };
+static const unsigned int alphas[SchemeLast][2]      = {
+        /*               fg      bg     */
+        [SchemeNorm] = { OPAQUE, ALPHA},
+        [SchemeSel]  = { OPAQUE, OPAQUE},
+        [SchemeSelHighlight]  = { OPAQUE, OPAQUE},
+        [SchemeNormHighlight]  = { OPAQUE, ALPHA},
+        [SchemeOut]  = { OPAQUE, ALPHA},
+};
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
 static unsigned int maxhist   = 2000;
