@@ -1,1 +1,0 @@
-vlc --fullscreen `dout ls`
