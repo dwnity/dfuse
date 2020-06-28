@@ -1,0 +1,8 @@
+#!/bin/bash
+query="$@"
+search="ddg.gg?q=$query"
+case "$1" in
+    "!yt"|"!so") YouTube "$search" || Surfer "$search" ;;
+    "!ji") Jisho "$search" || Surfer "$search";;
+    *) Surfer "$search" ;;
+esac
