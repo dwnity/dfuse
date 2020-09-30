@@ -1,8 +1,17 @@
 #!/bin/bash
 query="$@"
 search="ddg.gg?q=$query"
+browser="Surfer"
+while getopts 'w:' flag; do
+    case "${flag}" in
+        w) winid="-w ${OPTARG}";;
+    esac
+done
+[ -z "$1" ] && dsearch `cat ~/search.hist | dmenu "$@" -p "Search:" -H "search.hist" -l 25`||
 case "$1" in
-    "!yt"|"!so") YouTube "$search" || Surfer "$search" ;;
-    "!ji") Jisho "$search" || Surfer "$search";;
-    *) Surfer "$search" ;;
+    "-w") dsearch `cat ~/search.hist | dmenu -p Search: -H \"search.hist\" -l 25 $winid`;;
+    "!yt"|"!so") YouTube "$search" || $browser "$search" ;;
+    "!ji"|"!mal") Jisho "$search" || $browser "$search" ;;
+    "exit") break;;
+    *) $browser "$search" ;;
 esac
