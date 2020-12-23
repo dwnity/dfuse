@@ -6,7 +6,7 @@ dfuse is an efficient dynamic menu for X i based on dmenu that can also function
 Requirements
 ------------
 Just like dmenu, In order to build dfuse you need the Xlib header files.
-
+for networkmanager integration libnm-util-dev and gir1.2-nm-1.0 are needed on ubuntu/debian. see the full list of requirements for network manager integration at [the networkmanager-dmenu repo](https://github.com/firecat53/networkmanager-dmenu#requirements)
 
 Installation
 ------------
