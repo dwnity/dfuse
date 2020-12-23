@@ -4,6 +4,7 @@ Networkmanager-dmenu
 **NOTE: Python 2.x support ended as of 2019/11/13**
 
 cloned from [firecat53](https://github.com/firecat53/networkmanager-dmenu)
+
 Manage NetworkManager connections with dmenu instead of nm-applet
 
 Features
