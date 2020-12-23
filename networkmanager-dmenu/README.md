@@ -16,7 +16,7 @@ Features
 - Enable/Disable WWAN
 - Enable/Disable networking
 - Launch nm-connection-editor GUI
-- Support for multiple wifi adapters
+0- Support for multiple wifi adapters
 - Optional Pinentry support for secure passphrase entry
 - Delete existing connections
 - Rescan wifi networks
