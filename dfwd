@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -YC `dgred "Host " .ssh/config` $1
