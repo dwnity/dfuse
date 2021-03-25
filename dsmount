@@ -1,0 +1,1 @@
+sshmount $1 `dgred Host  .ssh/fsconfig`

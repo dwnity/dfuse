@@ -34,7 +34,7 @@ clean:
 dist: clean
 	mkdir -p dmenu-$(VERSION)
 	cp LICENSE Makefile README arg.h config.def.h config.mk dmenu.1\
-		drw.h util.h dmenu_path dmenu_run drun dout dterm dssh dfwd dibus dgred dls dappo dcurl dsout dsearch networkmanager-dmenu/networkmanager_dmenu stest.1 $(SRC)\
+		drw.h util.h dmenu_path dmenu_run drun dout dterm dssh sshmount/sshmount dsmount dfwd dibus dgred dls dappo dcurl dsout dsearch networkmanager-dmenu/networkmanager_dmenu stest.1 $(SRC)\
 		dmenu-$(VERSION)
 	tar -cf dmenu-$(VERSION).tar dmenu-$(VERSION)
 	gzip dmenu-$(VERSION).tar
@@ -42,7 +42,7 @@ dist: clean
 
 install: all
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f dmenu dmenu_path dmenu_run drun dout dterm dssh dfwd dibus dgred dls dappo dcurl dsout dsearch stest $(DESTDIR)$(PREFIX)/bin
+	cp -f dmenu dmenu_path dmenu_run drun dout dterm dssh sshmount/sshmount dsmount dfwd dibus dgred dls dappo dcurl dsout dsearch stest $(DESTDIR)$(PREFIX)/bin
 	cp -f networkmanager-dmenu/networkmanager_dmenu $(DESTDIR)$(PREFIX)/bin/dnetwork
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_path
@@ -51,6 +51,8 @@ install: all
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dterm
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dout
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dssh
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/sshmount
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/dsmount
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dfwd
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dibus
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dgred
@@ -75,6 +77,8 @@ uninstall:
 		$(DESTDIR)$(PREFIX)/bin/dterm\
 		$(DESTDIR)$(PREFIX)/bin/dout\
 		$(DESTDIR)$(PREFIX)/bin/dssh\
+		$(DESTDIR)$(PREFIX)/bin/sshmount\
+		$(DESTDIR)$(PREFIX)/bin/dsmount\
 		$(DESTDIR)$(PREFIX)/bin/dfwd\
 		$(DESTDIR)$(PREFIX)/bin/dibus\
 		$(DESTDIR)$(PREFIX)/bin/dgred\

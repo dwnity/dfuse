@@ -1,0 +1,3 @@
+[submodule "sshmount"]
+	path = sshmount
+	url = gh:/fuseteam/sshmount
