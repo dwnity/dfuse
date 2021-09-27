@@ -45,7 +45,10 @@ install: all
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f dmenu dmenu_path dmenu_run drun dout dterm dssh sshmount/sshmount dsmount dfwd dibus dgred dls dappo dcurl dsout dsearch stest $(DESTDIR)$(PREFIX)/bin
 	cp -f networkmanager-dmenu/networkmanager_dmenu $(DESTDIR)$(PREFIX)/bin/dnetwork
-	cp sshmount/sshmount_autocomplete /etc/bash_completion.d/sshmount
+	cp sshmount/sshmount_autocomplete $(COMPREFIX)/sshmount
+	cp sshmount/sshmountlib $(DESTDIR)$(PREFIX)/lib
+	sed -i 's|@prefix@|$(DESTDIR)$(PREFIX)|' $(DESTDIR)$(PREFIX)/bin/sshmount
+	sed -i 's|@prefix@|$(DESTDIR)$(PREFIX)|' $(COMPREFIX)/sshmount
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_path
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_run

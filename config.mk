@@ -3,6 +3,7 @@ VERSION = 4.9
 
 # paths
 PREFIX = /usr/local
+COMPREFIX = /etc/bash_completion.d
 MANPREFIX = $(PREFIX)/share/man
 
 X11INC = /usr/X11R6/include
