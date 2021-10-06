@@ -1,0 +1,2 @@
+choice="`echo -e "shutdown\nreboot\ncancel"| dmenu -p "What would you like to do?" -sb "#228b22" `"
+[ "$choice" = "shutdown" ] && shutdown now || `[ "$choice" = "reboot" ] && reboot`

@@ -34,7 +34,7 @@ clean:
 dist: clean
 	mkdir -p dmenu-$(VERSION)
 	cp LICENSE Makefile README arg.h config.def.h config.mk dmenu.1\
-		drw.h util.h dmenu_path dmenu_run drun dout dterm dssh sshmount/sshmount dsmount dfwd dibus dgred dls dappo dcurl dsout dsearch dvirt networkmanager-dmenu/networkmanager_dmenu stest.1 $(SRC)\
+		drw.h util.h dmenu_path dmenu_run drun dout dterm dssh sshmount/sshmount dsmount dfwd dibus dgred dls dappo dcurl dsout dsearch dvirt dpower networkmanager-dmenu/networkmanager_dmenu stest.1 $(SRC)\
 		dmenu-$(VERSION)
 	cp sshmount/sshmount_autocomplete /etc/bash_completion.d/sshmount
 	tar -cf dmenu-$(VERSION).tar dmenu-$(VERSION)
@@ -43,7 +43,7 @@ dist: clean
 
 install: all
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f dmenu dmenu_path dmenu_run drun dout dterm dssh sshmount/sshmount dsmount dfwd dibus dgred dls dappo dcurl dsout dsearch dvirt stest $(DESTDIR)$(PREFIX)/bin
+	cp -f dmenu dmenu_path dmenu_run drun dout dterm dssh sshmount/sshmount dsmount dfwd dibus dgred dls dappo dcurl dsout dsearch dvirt dpower stest $(DESTDIR)$(PREFIX)/bin
 	cp -f networkmanager-dmenu/networkmanager_dmenu $(DESTDIR)$(PREFIX)/bin/dnetwork
 	cp sshmount/sshmount_autocomplete $(COMPREFIX)/sshmount
 	cp sshmount/sshmountlib $(DESTDIR)$(PREFIX)/lib
@@ -68,6 +68,7 @@ install: all
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dsearch
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dnetwork
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dvirt
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/dpower
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/stest
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
 	sed "s/VERSION/$(VERSION)/g" < dmenu.1 > $(DESTDIR)$(MANPREFIX)/man1/dmenu.1
@@ -96,6 +97,7 @@ uninstall:
 		$(DESTDIR)$(PREFIX)/bin/dsearch\
 		$(DESTDIR)$(PREFIX)/bin/dnetwork\
 		$(DESTDIR)$(PREFIX)/bin/dvirt\
+		$(DESTDIR)$(PREFIX)/bin/dpower\
 		$(DESTDIR)$(PREFIX)/bin/stest\
 		$(DESTDIR)$(MANPREFIX)/man1/dmenu.1\
 		$(DESTDIR)$(MANPREFIX)/man1/stest.1
