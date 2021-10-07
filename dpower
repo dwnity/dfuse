@@ -1,4 +1,5 @@
 choice="$(cat /usr/local/lib/dmenu/commands/pcontrol| dmenu -p "What would you like to do?" -sb "#228b22" )"
+[ -z "$choice" ] && exit;
 if [ "$choice" = "shutdown" ]; then
    shutdown now
 else

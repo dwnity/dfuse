@@ -1,8 +1,9 @@
 #!/bin/bash
 cd ${1:-.}
 file=`dout ls`
-while [ -d $file ]; do
+while [[ -d $file && -n $file ]]; do
         cd $file
         file=`dout ls`
 done
+[ -z $file ] && exit;
 [ -f $file ] && xdg-open $file || $file | ${SHELL:-"/bin/sh"} &
