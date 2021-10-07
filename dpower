@@ -2,6 +2,8 @@ choice="$(cat /usr/local/lib/dmenu/commands/pcontrol| dmenu -p "What would you l
 [ -z "$choice" ] && exit;
 if [ "$choice" = "shutdown" ]; then
    shutdown now
+elif [ "$choice" = "logout" ]; then
+   loginctl terminate-session $XDG_SESSION_ID
 else
    systemctl "$choice";
 fi
