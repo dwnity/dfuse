@@ -49,6 +49,8 @@ install: all
 	cp sshmount/sshmountlib $(DESTDIR)$(PREFIX)/lib
 	sed -i 's|@prefix@|$(DESTDIR)$(PREFIX)|' $(DESTDIR)$(PREFIX)/bin/sshmount
 	sed -i 's|@prefix@|$(DESTDIR)$(PREFIX)|' $(COMPREFIX)/sshmount
+	mkdir -p $(DESTDIR)$(PREFIX)/lib/dmenu/commands
+	cp -f commands/pcontrol $(DESTDIR)$(PREFIX)/lib/dmenu/commands
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_path
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_run
@@ -75,9 +77,9 @@ install: all
 	sed "s/VERSION/$(VERSION)/g" < stest.1 > $(DESTDIR)$(MANPREFIX)/man1/stest.1
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/dmenu.1
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/stest.1
-
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/dmenu\
+		$(DESTDIR)$(PREFIX)/lib/dmenu\
 		$(DESTDIR)$(PREFIX)/bin/dmenu_path\
 		$(DESTDIR)$(PREFIX)/bin/dmenu_run\
 		$(DESTDIR)$(PREFIX)/bin/drun\
