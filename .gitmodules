@@ -1,7 +1,7 @@
 [submodule "sshmount"]
 	path = sshmount
-	url = https://github.com/fuseteam/sshmount
+	url = gh:fuseteam/sshmount
 [submodule "networkmanager-dmenu"]
 	path = networkmanager-dmenu
-	url = https://github.com/fuseteam/networkmanager-dmenu
+	url = gh:fuseteam/networkmanager-dmenu
 	branch = main
