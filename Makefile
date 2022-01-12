@@ -47,6 +47,7 @@ install: all
 	cp -f networkmanager-dmenu/networkmanager_dmenu $(DESTDIR)$(PREFIX)/bin/dnetwork
 	cp sshmount/sshmount_autocomplete $(COMPREFIX)/sshmount
 	cp sshmount/sshmountlib $(DESTDIR)$(PREFIX)/lib
+	cp j4-dmenu-desktop/j4-dmenu-desktop dappo
 	sed -i 's|@prefix@|$(DESTDIR)$(PREFIX)|' $(DESTDIR)$(PREFIX)/bin/sshmount
 	sed -i 's|@prefix@|$(DESTDIR)$(PREFIX)|' $(COMPREFIX)/sshmount
 	mkdir -p $(DESTDIR)$(PREFIX)/lib/dmenu/commands

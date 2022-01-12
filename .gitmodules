@@ -3,5 +3,9 @@
 	url = gh:fuseteam/sshmount
 [submodule "networkmanager-dmenu"]
 	path = networkmanager-dmenu
-	url = gh:fuseteam/networkmanager-dmenu
+	url = gh:dwnity/networkmanager-dmenu
 	branch = main
+[submodule "j4-dmenu-desktop"]
+	path = j4-dmenu-desktop
+	url = gh:dwnity/j4-dmenu-desktop
+        branch = develop
