@@ -3,6 +3,7 @@ choice="$(cat /usr/local/lib/dmenu/commands/pcontrol| dmenu -p "What would you l
 if [ "$choice" = "shutdown" ]; then
    shutdown now
 elif [ "$choice" = "logout" ]; then
+   [ -z $XDG_SESSION_ID ] && XDG_SESSION_ID=$(awk '{print $1}' <(loginctl --no-legend list-sessions))
    loginctl terminate-session $XDG_SESSION_ID
 else
    systemctl "$choice";

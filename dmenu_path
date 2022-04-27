@@ -5,9 +5,6 @@ cache="$cachedir/dmenu_run"
 
 [ ! -e "$cachedir" ] && mkdir -p "$cachedir"
 
-scriptdir="$HOME/.config/dsti/scripts"
-[ ! -e "$scriptdir" ] && mkdir -p "$scriptdir"
-
 IFS=:
 if stest -dqr -n "$cache" $PATH; then
 	stest -flx $PATH | sort -u | tee "$cache"

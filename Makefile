@@ -43,11 +43,13 @@ dist: clean
 
 install: all
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f dmenu dmenu_path dmenu_run drun dout dterm dssh sshmount/sshmount dsmount dfwd dibus dgred dls dappo dcurl dsout dsearch dvirt dpower stest $(DESTDIR)$(PREFIX)/bin
+	chmod 755 bin/*
+	cp -f dmenu dmenu_path dmenu_run sshmount/sshmount bin/* stest $(DESTDIR)$(PREFIX)/bin
+	chmod 664 bin/*
 	cp -f networkmanager-dmenu/networkmanager_dmenu $(DESTDIR)$(PREFIX)/bin/dnetwork
 	cp sshmount/sshmount_autocomplete $(COMPREFIX)/sshmount
 	cp sshmount/sshmountlib $(DESTDIR)$(PREFIX)/lib
-	cp j4-dmenu-desktop/j4-dmenu-desktop dappo
+	cp -f j4-dmenu-desktop/j4-dmenu-desktop $(DESTDIR)$(PREFIX)/bin/dappo
 	sed -i 's|@prefix@|$(DESTDIR)$(PREFIX)|' $(DESTDIR)$(PREFIX)/bin/sshmount
 	sed -i 's|@prefix@|$(DESTDIR)$(PREFIX)|' $(COMPREFIX)/sshmount
 	mkdir -p $(DESTDIR)$(PREFIX)/lib/dmenu/commands
@@ -55,23 +57,8 @@ install: all
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_path
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_run
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/drun
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dterm
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dout
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dssh
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/sshmount
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dsmount
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dfwd
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dibus
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dgred
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dls
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dappo
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dcurl
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dsout
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dsearch
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dnetwork
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dvirt
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/dpower
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/stest
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
 	sed "s/VERSION/$(VERSION)/g" < dmenu.1 > $(DESTDIR)$(MANPREFIX)/man1/dmenu.1

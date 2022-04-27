@@ -1,6 +1,6 @@
 #!/bin/bash
 virt=$(virsh list --all |dmenu -l 10)
-machine=$(echo $virt|awk '{print $2}');
+machine=$(awk '{print $2}' <(echo $virt));
 state=$(echo $virt|awk '{print $3}');
 if [[ "$state" = "shut" ]]; then
     virsh start $machine;
